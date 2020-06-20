@@ -56,14 +56,32 @@ public class Mostrarpdf extends HttpServlet {
                 Documento.add(titulo); // Agregar el elemento al pdf
                 parrafo.setAlignment(Element.ALIGN_JUSTIFIED);
                 parrafo.add(new Phrase("Lista de usuarios disponibles de la base de datos", font_parrafos));
+                parrafo.add(new Phrase(Chunk.NEWLINE));
+                parrafo.add(new Phrase(Chunk.NEWLINE));
+                parrafo.add(new Phrase(Chunk.NEWLINE));
                 Documento.add(parrafo);// Agregar elemento al pdf
 
                 //Agregar tabla
                 PdfPTable tabla = new PdfPTable(2);// Columnas
-                PdfPCell celda1 = new PdfPCell();// celda 1
-                Documento.close();
+                //                                           texto      fuente
+                PdfPCell celda1 = new PdfPCell(new Paragraph("Codigo", FontFactory.getFont("Arial Black",12,BaseColor.ORANGE)));
+                PdfPCell celda2 = new PdfPCell(new Paragraph("Nombre", FontFactory.getFont("Arial Black",12,BaseColor.ORANGE)));
+                PdfPCell celda3 = new PdfPCell(new Paragraph("0123456788", FontFactory.getFont("Arial Black",12,BaseColor.BLACK)));
+                PdfPCell celda4 = new PdfPCell(new Paragraph("Rojas", FontFactory.getFont("Arial Black",12,BaseColor.BLACK)));
+                
+                celda1.setPaddingBottom(5);// padding
+                celda3.setPaddingBottom(5);// padding
+                //Agregar celdas a la tabla aconsejo usar un bucle para esto
+                tabla.addCell(celda1);
+                tabla.addCell(celda2);
+                tabla.addCell(celda3);
+                tabla.addCell(celda4);
+                
+                
+                Documento.add(tabla);// Meter al documento
+                Documento.close();// no olvidar cerrar el doc
             } catch (DocumentException e) {
-                System.out.println("Uff que hiciste perro");
+                System.out.println("Uff que hiciste perro " + e);
             }
             
         } finally{
