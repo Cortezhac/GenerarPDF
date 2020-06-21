@@ -14,6 +14,17 @@ public class Persona {
     private String apellidos_persona;
     private String nombre_persona;
 
+    public Persona(){
+        
+    }
+
+    public Persona(String dui_persona, String apellidos_persona, String nombre_persona) {
+        this.dui_persona = dui_persona;
+        this.apellidos_persona = apellidos_persona;
+        this.nombre_persona = nombre_persona;
+    }
+    
+    
     public String getDui_persona() {
         return dui_persona;
     }
