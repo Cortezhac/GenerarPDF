@@ -4,9 +4,25 @@
         <servlet-name>Mostrarpdf</servlet-name>
         <servlet-class>PDF.Mostrarpdf</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LIstarRegistros</servlet-name>
+        <servlet-class>Controller.LIstarRegistros</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListarPDF</servlet-name>
+        <servlet-class>Controller.ListarPDF</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Mostrarpdf</servlet-name>
         <url-pattern>/Mostrarpdf</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LIstarRegistros</servlet-name>
+        <url-pattern>/LIstarRegistros</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarPDF</servlet-name>
+        <url-pattern>/ListarPDF</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
